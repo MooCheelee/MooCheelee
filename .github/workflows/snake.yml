@@ -1,4 +1,4 @@
-name: Generate Snake with Name
+name: Generate Snake
 
 permissions:
   contents: write
@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -20,21 +19,15 @@ jobs:
         uses: Platane/snk@v3
         with:
           github_user_name: MooCheelee
-          outputs: snake.svg   # 改成生成在工作目录下
-          
-      - name: Add custom name at the end
-        run: |
-          echo "在 SVG 中添加文字 MooCheelee"
-          awk '
-          /<\/svg>/ {
-            print "<text x=\"50%\" y=\"95%\" font-size=\"40\" text-anchor=\"middle\" fill=\"red\" font-family=\"Arial\">MooCheelee</text>"
-          }
-          { print }
-          ' snake.svg > dist/github-contribution-grid-snake.svg
+          outputs: dist/github-contribution-grid-snake.svg
 
-      - name: Push Snake to output branch
+      - name: Push Snake to the output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        with:
           target_branch: output
           build_dir: dist
         env:
