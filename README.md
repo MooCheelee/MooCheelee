@@ -6,5 +6,5 @@
 
 ![Snake animation](https://raw.githubusercontent.com/MooCheelee/MooCheelee/output/github-contribution-grid-snake.svg)
 
-
+![Snake animation](https://raw.githubusercontent.com/MooCheelee/MooCheelee/output/github-contribution-grid-snake.svg)
 ---
