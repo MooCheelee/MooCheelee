@@ -8,7 +8,3 @@
 
 
 ---
-
-![Profile Views](https://komarev.com/ghpvc/?username=MooCheelee&color=blue&style=flat-square)
-
-
